@@ -1,0 +1,11 @@
+li a {
+    font-size: 18px;
+    font-weight: bolder;
+    text-decoration: none;
+    margin-right: 20px;
+    color: rgb(42, 71, 42);
+   
+}
+/* li a:hover{
+    color: red;
+} */
