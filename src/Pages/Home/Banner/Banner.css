@@ -1,0 +1,11 @@
+.header-text{
+    font-size: 47px;
+    font-weight: bold;
+}
+.header-text span{
+    font-size: 60px;
+}
+.header-desc{
+    font-size: 16px;
+    color: rgb(71, 78, 78);
+}

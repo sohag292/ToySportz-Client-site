@@ -8,7 +8,7 @@ export default function Navbar() {
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <div className="container">
           <img style={{width:"70px"}} src={logo} alt="" />
-          <Link to={"/"}  className="navbar-brand fs-3 fw-bolder" href="#">  Toy<span className='text-success'>S</span>portz</Link>
+          <Link to="/"  className="navbar-brand fs-3 fw-bolder" href="#">  Toy<span className='text-success'>S</span>portz</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -31,7 +31,7 @@ export default function Navbar() {
               </li>
             </ul>
             <div className="d-flex">
-              <button className="btn btn-success" type="submit">Login</button>
+              <Link to="/login"><button className="btn btn-success btn-lg" type="submit">Login</button></Link>
             </div>
           </div>
         </div>
