@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../../assets/navlogo.png'
 import './Navbar.css'
+import ActiveLink from '../../ActiveLink/ActiveLink'
 export default function Navbar() {
   return (
     <div>
@@ -14,20 +15,20 @@ export default function Navbar() {
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
-              <li className="">
-                <Link className=" " aria-current="page" href="#">Home</Link>
+              <li>
+                <ActiveLink to='/' aria-current="page" href="#">Home</ActiveLink>
               </li>
-              <li className="">
-                <Link className="" href="#" >All Toys</Link>
+              <li>
+                <ActiveLink to='/alltoys'  href="#" >All Toys</ActiveLink>
               </li>
-              <li className="">
-                <Link className="" href="#" >My Toys </Link>
+              <li>
+                <ActiveLink to='/mytoys' href="#" >My Toys </ActiveLink>
               </li>
-              <li className="">
-                <Link className="" href="#" >Add A Toy</Link>
+              <li>
+                <ActiveLink to='/addtoy' href="#" >Add Toy</ActiveLink>
               </li>
-              <li className="">
-                <Link className="" href="#" >Blogs</Link>
+              <li>
+                <ActiveLink to='/blogs' href="#" >Blogs</ActiveLink>
               </li>
             </ul>
             <div className="d-flex">

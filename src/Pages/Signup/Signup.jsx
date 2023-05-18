@@ -11,20 +11,20 @@ export default function Signup() {
                         <p className="text-success text-center fs-5 fw-bolder"></p>
                     </div>
 
-                    <div className="form-group">
+                    <div className="form-group mb-2">
                         <label for="formEmail">Name:</label>
                         <input type="name" className="form-control" name="name" placeholder="Enter your Name" required />
                     </div>
 
-                    <div className="form-group">
+                    <div className="form-group mb-2">
                         <label for="formEmail">Email address</label>
                         <input type="email" className="form-control" name="email" placeholder="Enter your email address" required />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group mb-2">
                         <label for="formPassword">Password</label>
                         <input type="password" className="form-control" name="password" placeholder="Enter your Password" required />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group mb-2">
                         <label for="formPassword">Photo url</label>
                         <input type="text" className="form-control" name="photo" placeholder="Enter your photo url" required />
                     </div>
