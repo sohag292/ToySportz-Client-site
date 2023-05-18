@@ -7,10 +7,12 @@ import Alltoys from "../Pages/Alltoys/Alltoys";
 import Mytoys from "../Pages/Mytoys/Mytoys";
 import AddToy from "../Pages/AddToy/AddToy";
 import Blogs from "../Pages/Blogs/Blogs";
+import Error from "../Pages/Error/Error";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",
@@ -22,23 +24,23 @@ const router = createBrowserRouter([
       },
       {
         path: "/singup",
-        element:<Signup></Signup>,
+        element: <Signup></Signup>,
       },
       {
         path: "/alltoys",
-        element:<Alltoys></Alltoys>,
+        element: <Alltoys></Alltoys>,
       },
       {
         path: "/mytoys",
-        element:<Mytoys></Mytoys>,
+        element: <Mytoys></Mytoys>,
       },
       {
         path: "/addtoy",
-        element:<AddToy></AddToy>,
+        element: <AddToy></AddToy>,
       },
       {
         path: "/blogs",
-        element:<Blogs></Blogs>,
+        element: <Blogs></Blogs>,
       }
     ]
   },
