@@ -1,0 +1,17 @@
+.gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 100%;
+    background-color: #e3e9e4;
+    color: #fff;
+    margin: 0 15px;
+    font-size: 4em;
+  }

@@ -4,7 +4,7 @@ import './Banner.css'
 export default function Banner() {
     return (
         <section className="container">
-            <div className="row flex-column-reverse flex-md-row">
+            <div className="row flex-column-reverse flex-md-row mb-5">
                 <div className="col-md-6 d-flex align-items-center order-md-1">
                     <div>
                         <h1 className='w-75 header-text'>Find your best Toys for your Children<span className='text-success'>.</span></h1>
