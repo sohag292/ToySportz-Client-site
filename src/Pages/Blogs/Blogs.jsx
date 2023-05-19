@@ -2,17 +2,17 @@ import React from 'react'
 import './Blogs.css'
 export default function Blogs() {
   return (
-    <div class="container my-5">
+    <div className="container my-5">
 
-      <div class="accordion mb-4" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button text-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+      <div className="accordion mb-4" id="accordionExample">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingOne">
+            <button className="accordion-button text-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
               <h5> What is an access token and refresh token? How do they work and where should we store them on the client-side?</h5>
             </button>
           </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
+          <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div className="accordion-body">
               <h6>Access Token:</h6>
               <ul>
                 <li>An access token is a credential issued by an authentication server to a client application after successful authentication.</li>
@@ -36,15 +36,15 @@ export default function Blogs() {
         </div>
       </div>
 
-      <div class="accordion mb-4" id="accordionExample2">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingtwo">
-            <button class="accordion-button text-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwo" aria-expanded="true" aria-controls="collapsetwo">
+      <div className="accordion mb-4" id="accordionExample2">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingtwo">
+            <button className="accordion-button text-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapsetwo" aria-expanded="true" aria-controls="collapsetwo">
               <h5>Compare SQL and NoSQL databases?</h5>
             </button>
           </h2>
-          <div id="collapsetwo" class="accordion-collapse collapse" aria-labelledby="headingtwo" data-bs-parent="#accordionExample2">
-            <div class="accordion-body">
+          <div id="collapsetwo" className="accordion-collapse collapse" aria-labelledby="headingtwo" data-bs-parent="#accordionExample2">
+            <div className="accordion-body">
               <h6>SQL databases</h6>
               <ul>
                 <li>Use a structured query language (SQL) to access and manipulate data.</li>
@@ -65,15 +65,15 @@ export default function Blogs() {
         </div>
       </div>
 
-      <div class="accordion mb-4" id="accordionExample3">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingthree">
-            <button class="accordion-button text-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethree" aria-expanded="true" aria-controls="collapsethree">
+      <div className="accordion mb-4" id="accordionExample3">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingthree">
+            <button className="accordion-button text-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapsethree" aria-expanded="true" aria-controls="collapsethree">
               <h5>What is express js? What is Nest JS</h5>
             </button>
           </h2>
-          <div id="collapsethree" class="accordion-collapse collapse " aria-labelledby="headingthree" data-bs-parent="#accordionExample3">
-            <div class="accordion-body">
+          <div id="collapsethree" className="accordion-collapse collapse " aria-labelledby="headingthree" data-bs-parent="#accordionExample3">
+            <div className="accordion-body">
               <h6>Express.js:</h6>
               <ul>
                 <li>Back-end web application framework for Node.js.</li>
@@ -91,15 +91,15 @@ export default function Blogs() {
         </div>
       </div>
 
-      <div class="accordion mb-4" id="accordionExampl4">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingfour">
-            <button class="accordion-button text-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="true" aria-controls="collapsefour">
+      <div className="accordion mb-4" id="accordionExampl4">
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingfour">
+            <button className="accordion-button text-success" type="button" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="true" aria-controls="collapsefour">
               <h5>What is MongoDB aggregate and how does it work</h5>
             </button>
           </h2>
-          <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour" data-bs-parent="#accordionExample4">
-            <div class="accordion-body">
+          <div id="collapsefour" className="accordion-collapse collapse" aria-labelledby="headingfour" data-bs-parent="#accordionExample4">
+            <div className="accordion-body">
               <p>MongoDB's aggregate is a framework for performing advanced data processing and analysis operations on collections of documents. It allows you to perform complex queries, transformations, and aggregations on your data.The aggregate framework works by defining a pipeline of stages, where each stage performs a specific operation on the documents in the input. The output of each stage is passed as input to the next stage in the pipeline. This allows you to chain multiple stages together to achieve the desired result.
                 Each stage in the pipeline can use various operators and expressions to manipulate the data. These operators enable you to filter documents, group data, perform calculations, sort results, join collections, and more.</p>
             </div>

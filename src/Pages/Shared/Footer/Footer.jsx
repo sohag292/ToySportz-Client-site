@@ -36,9 +36,9 @@ export default function Footer() {
                     <li><a href="#" className="py-1 d-block"><span className="mr-2 text-footer"></span>How to Used</a></li>
                   </ul>
                 </div>
-                <div class="col-md-3 mb-md-0 mb-4">
-                  <h2 class="footer-heading">Services</h2>
-                  <ul class="list-unstyled">
+                <div className="col-md-3 mb-md-0 mb-4">
+                  <h2 className="footer-heading">Services</h2>
+                  <ul className="list-unstyled">
                     <li><a href="#" className="py-1 d-block"><span className="mr-2 text-footer"></span>Toy Customization</a></li>
                     <li><a href="#" className="py-1 d-block"><span className="mr-2 text-footer"></span>Express Shipping</a></li>
                     <li><a href="#" className="py-1 d-block"><span className="mr-2 text-footer"></span>Gift Wrapping</a></li>
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
           <hr />
           <div className='d-flex flex-column flex-sm-row flex-column-reverse flex-md-row justify-content-between align-items-center'>
-            <p class="p-2 order-md-1 text-center text-footer">
+            <p className="p-2 order-md-1 text-center text-footer">
               CopyRight &#169; 2023 All rights reserved | This is made with &#10084; by SR company
             </p>
             <div className='d-flex justify-center pb-2 order-md-2 social-icon'>

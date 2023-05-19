@@ -6,7 +6,12 @@ li a {
     color: rgb(42, 71, 42);
    
 }
-.navbar-nav .nav-item:hover {
-    background-color: transparent !important;
-  }
+
+.profile img{
+    width: 50px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer; 
+    margin-right: 20px;
+}
   
