@@ -4,12 +4,15 @@ import { Link } from 'react-router-dom'
 import { AuthContext } from '../../Provider/AuthProvider';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ToySportTitle from '../../TitleHooks/ToySportTitle';
 export default function Signup() {
+    ToySportTitle("sinUp")
     const { createUser, updateUserData, logOut } = useContext(AuthContext)
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
     
     const handleSignup = event =>{
+        
         event.preventDefault();
         setSuccess('');
         setError('');

@@ -1,6 +1,8 @@
 import React from 'react'
 import './Blogs.css'
+import ToySportTitle from '../../TitleHooks/ToySportTitle'
 export default function Blogs() {
+  ToySportTitle("Blogs")
   return (
     <div className="container my-5">
 

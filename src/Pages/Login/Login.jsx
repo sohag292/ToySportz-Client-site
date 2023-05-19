@@ -4,8 +4,10 @@ import loginImg from '../../assets/loginImg.png'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext, auth } from '../../Provider/AuthProvider'
+import ToySportTitle from '../../TitleHooks/ToySportTitle';
 export default function Login() {
   const { signIn, signInWithGoogle } = useContext(AuthContext);
+  ToySportTitle("Login");
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/'
