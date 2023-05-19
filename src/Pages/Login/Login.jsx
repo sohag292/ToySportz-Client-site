@@ -26,8 +26,8 @@ export default function Login() {
       .then(result => {
         const loggedUser = result.user;
         setSuccess("Login successfully")
-        navigate(from, {replace:true})
         form.reset()
+        navigate(from, {replace:true})
       })
       .catch(error => {
         setError("Email or password is incorrect");
@@ -41,6 +41,7 @@ export default function Login() {
       .then((result) => {
         const user = result.user;
         console.log(user);
+        navigate(from, {replace:true})
       })
       .catch((error) => {
         console.error(error);
