@@ -1,8 +1,9 @@
 import React from 'react'
 
-export default function MytoysTable({index,item}) {
+export default function MytoysTable({index,item,handleDelete}) {
     console.log(item);
-    const {name,price,quantity,description} = item;
+    const {_id, name,price,quantity,description} = item;
+    
   return (
     <tr>
     <th scope="row">{index}</th>
@@ -12,7 +13,7 @@ export default function MytoysTable({index,item}) {
     <td>{description}</td>
     <td>
         <button className="btn btn-primary ">Update</button>
-        <button className="btn btn-danger mx-4">Delete</button>
+        <button onClick={() => handleDelete(_id)} className="btn btn-danger mx-4">Delete</button>
       </td>
   </tr>
   )
