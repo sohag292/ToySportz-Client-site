@@ -1,5 +1,6 @@
 import React from 'react'
 import './AddToy.css'
+import Swal from 'sweetalert2'
 import ToySportTitle from '../../TitleHooks/ToySportTitle'
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
@@ -19,8 +20,29 @@ export default function AddToy() {
     const quantity = form.quantity.value;
     const description = form.description.value;
 
-    console.log(pictureUrl, name, sellerName, sellerEmail, subCategory, price, rating, quantity, description);
+    const newToy ={pictureUrl, name, sellerName, sellerEmail, subCategory, price, rating, quantity, description};
 
+    //send data to the server
+    fetch('http://localhost:2000/addToy',{
+      method:'POST',
+      headers:{
+          'content-type':'application/json'
+      },
+      body:JSON.stringify(newToy)
+    })
+    .then(res => res.json())
+    .then(data =>{
+      console.log(data)
+      if(data.insertedId){
+        Swal.fire({
+            title: 'success!',
+            text: 'ToySportz Added successfully',
+            icon: 'success',
+            confirmButtonText: 'okay'
+          })
+    }
+    form.reset()
+    })
 
   }
   return (

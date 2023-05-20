@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext, auth } from '../../Provider/AuthProvider'
 import ToySportTitle from '../../TitleHooks/ToySportTitle';
+import Swal from 'sweetalert2'
 export default function Login() {
   const { signIn, signInWithGoogle } = useContext(AuthContext);
   ToySportTitle("Login");
@@ -25,7 +26,13 @@ export default function Login() {
     signIn(email, password)
       .then(result => {
         const loggedUser = result.user;
-        setSuccess("Login successfully")
+        Swal.fire({
+          position: 'top-center',
+          icon: 'success',
+          title: 'Login Succssfully done ',
+          showConfirmButton: false,
+          timer: 1500
+      })
         form.reset()
         navigate(from, {replace:true})
       })
@@ -42,6 +49,13 @@ export default function Login() {
         const user = result.user;
         console.log(user);
         navigate(from, {replace:true})
+        Swal.fire({
+          position: 'top-center',
+          icon: 'success',
+          title: 'Login Successfull ',
+          showConfirmButton: false,
+          timer: 1500
+        })
       })
       .catch((error) => {
         console.error(error);
