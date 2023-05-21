@@ -3,14 +3,17 @@ import Banner from '../Banner/Banner'
 import ToySportTitle from '../../../TitleHooks/ToySportTitle'
 import GalleryToy from '../../Gallery/GalleryToy'
 import ToyTabs from '../../ToyTabs/ToyTabs'
+import OurAbout from '../../OurAbout/OurAbout'
 
 export default function Home() {
   ToySportTitle("Home")
   return (
     <div>
       <Banner></Banner>
-     <GalleryToy></GalleryToy>
-     <ToyTabs></ToyTabs>
+      <OurAbout></OurAbout>
+      <GalleryToy></GalleryToy>
+      <ToyTabs></ToyTabs>
+
     </div>
   )
 }

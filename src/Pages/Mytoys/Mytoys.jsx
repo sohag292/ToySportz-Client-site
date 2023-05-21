@@ -12,7 +12,7 @@ export default function Mytoys() {
   const { user } = useContext(AuthContext)
   const [items, setItems] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:2000/mytoys?email=${user.email}`)
+    fetch(`http://localhost:2000/addToy?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setItems(data))
   }, [user]);
