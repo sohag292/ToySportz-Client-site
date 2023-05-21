@@ -11,6 +11,7 @@ import Error from "../Pages/Error/Error";
 import PrivateRoute from "./PrivateRoute";
 import ToysDetails from "../Pages/ToysDetails/ToysDetails";
 import UpdateSports from "../Pages/UpdateSports/UpdateSports";
+import TabviewDetailsallinfo from '../Pages/TabviewDetailsallinfo/TabviewDetailsallinfo'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -55,7 +56,13 @@ const router = createBrowserRouter([
         path: "/mytoys/updateSports/:id",
         element: <UpdateSports></UpdateSports>,
         loader:({params})=>fetch(`http://localhost:2000/addToy/${params.id}`)
+      },
+      {
+        path: "/TabviewDetailsallinfo/:id",
+        element: <PrivateRoute><TabviewDetailsallinfo></TabviewDetailsallinfo></PrivateRoute>,
+        loader:({params})=>fetch(`http://localhost:2000/addToy/${params.id}`)
       }
+
     ]
   },
 ]);
