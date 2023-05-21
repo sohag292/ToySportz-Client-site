@@ -4,6 +4,7 @@ import Swal from 'sweetalert2'
 import ToySportTitle from '../../TitleHooks/ToySportTitle'
 import { useContext } from 'react';
 import { AuthContext } from '../../Provider/AuthProvider';
+import { useState } from 'react';
 export default function AddToy() {
   ToySportTitle('AddToy')
   const { user } = useContext(AuthContext);
@@ -45,6 +46,16 @@ export default function AddToy() {
     })
 
   }
+
+  const bookCategories = ["Basketball", "Cricket toys", "soccer toy"];
+
+  const [selectedToyCategory, setSelectedToyCategory] = useState(
+    bookCategories[0]
+  );
+
+  const handleChangeSelectedValue = (event) => {
+    setSelectedToyCategory(event.target.value);
+  };
   return (
     <div>
       <div className="container my-5">
@@ -96,14 +107,24 @@ export default function AddToy() {
               />
             </div>
             <div className="col-md-6">
-              <label htmlFor="subCategory" className="form-label">
-                Sub-category
-              </label>
-              <input
-                type="text"
-                name="subCategory"
-                className="form-control"
-              />
+
+                  <label className="label">
+                    <span className="label-text">Sub Category</span>
+                  </label>
+                  <select
+                    id="inputState"
+                    name="subCategory"
+                    className="form-select p-3 rounded-lg "
+                    value={selectedToyCategory}
+                    onChange={handleChangeSelectedValue}
+                  >
+                    {bookCategories.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+
             </div>
             <div className="col-md-6">
               <label htmlFor="price" className="form-label">
