@@ -1,9 +1,36 @@
 import React from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from 'sweetalert2'
+import Aos from 'aos';
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 
 const TabviewDetails = ({ allCategory, subCategory, altText }) => {
+    const {user} = useContext(AuthContext)
+    useEffect(() => {
+        Aos.init({ duration: 2000 });
+      }, []);
+    const handleClick = () => {
+        if (user) {
+
+        } else {
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: 'Please Login !!',
+                showConfirmButton: false,
+                timer: 1500
+            })
+
+        }
+    };
     return (
-        <div className="row row-cols-1 row-cols-md-3 mx-auto mt-5 mb-5 gap-4">
+        <div data-aos="fade-left"
+        data-aos-anchor="#example-anchor"
+        data-aos-offset="500"
+        data-aos-duration="500" className="row row-cols-1 row-cols-md-3 mx-auto mt-5 mb-5 gap-4">
             {allCategory
                 .filter((category) => category.subCategory === subCategory)
                 .map((item) => (
@@ -19,7 +46,7 @@ const TabviewDetails = ({ allCategory, subCategory, altText }) => {
                                 <p>Price: {item.price}</p>
                                 <p>Rating: {item.rating}</p>
                                 <div className="card-actions justify-content-end">
-                                    <Link to={`/TabviewDetailsallinfo/${item._id}`}><button  className="btn btn-primary">View details</button></Link>
+                                    <Link to={`/TabviewDetailsallinfo/${item._id}`}><button onClick={handleClick}  className="btn btn-primary">View details</button></Link>
                                 </div>
                             </div>
                         </div>

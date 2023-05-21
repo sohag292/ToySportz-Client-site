@@ -131,7 +131,7 @@ export default function AddToy() {
                 Price
               </label>
               <input
-                type="text"
+                type="number"
                 name="price"
                 className="form-control"
               />

@@ -8,6 +8,9 @@ import image3 from '../../assets/image/baby_badmainton.png'
 import image4 from '../../assets/image/baseball.png'
 import image5 from '../../assets/image/vollyball-removebg-preview.png'
 import image6 from '../../assets/image/golf.png'
+import Aos from 'aos';
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
 const breakPoints = [
     { width: 1, itemsToShow: 1 },
     { width: 550, itemsToShow: 2 },
@@ -15,11 +18,13 @@ const breakPoints = [
     { width: 1200, itemsToShow: 4 },
 ];
 export default function GalleryToy() {
-
+    useEffect(() => {
+        Aos.init({ duration: 2000 });
+      }, []);
     return (
         <div className='mx-4 my-5'>
             <h1 className='text-center fw-bolder mb-5'>Toy<span className='text-success'>S</span>portz Gallery</h1>
-            <div className="gallery">
+            <div data-aos="flip-left" className="gallery">
                 <Carousel breakPoints={breakPoints}>
                     <div className='item'><img className='w-75' src={image1} alt="" /></div>
                     <div className='item'><img className='w-75' src={image2} alt="" /></div>

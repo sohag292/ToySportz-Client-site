@@ -1,10 +1,21 @@
 import React from 'react'
 import imag1 from '../../assets/image/about.png'
 import imag2 from '../../assets/image/about2.png'
+import Aos from 'aos';
+import "aos/dist/aos.css";
+import { useEffect } from 'react';
+
 export default function OurAbout() {
+    useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
+
+ 
     return (
         <div>
-            <div>
+            <div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine">
                 <div className=" py-5 bg-light">
                     <div className="container">
                         <div className="row">

@@ -32,6 +32,7 @@ export default function UpdateSports() {
                 icon: 'success',
                 confirmButtonText: 'okay'
               })
+              form.reset()
         }
 
         })
