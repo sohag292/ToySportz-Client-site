@@ -4,6 +4,7 @@ import ToySportTitle from '../../../TitleHooks/ToySportTitle'
 import GalleryToy from '../../Gallery/GalleryToy'
 import ToyTabs from '../../ToyTabs/ToyTabs'
 import OurAbout from '../../OurAbout/OurAbout'
+import OurBestProduct from '../../OurBestProduct/OurBestProduct'
 
 export default function Home() {
   ToySportTitle("Home")
@@ -13,7 +14,7 @@ export default function Home() {
       <OurAbout></OurAbout>
       <GalleryToy></GalleryToy>
       <ToyTabs></ToyTabs>
-
+      <OurBestProduct></OurBestProduct>
     </div>
   )
 }
