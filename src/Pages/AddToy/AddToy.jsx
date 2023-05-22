@@ -42,7 +42,7 @@ export default function AddToy() {
             confirmButtonText: 'okay'
           })
     }
-    form.reset()
+    // form.reset()
     })
 
   }

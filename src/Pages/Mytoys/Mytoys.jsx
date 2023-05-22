@@ -13,10 +13,10 @@ export default function Mytoys() {
   const [items, setItems] = useState([])
   const [selectedOption,setSelectedOption] = useState('asen');
   useEffect(() => {
-    fetch(`http://localhost:2000/addToy?email=${user.email}&sort=${selectedOption}`)
+    fetch(`http://localhost:2000/addToy?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setItems(data))
-  }, [user,selectedOption]);
+  }, [user]);
 
   const handleDelete = _id => {
     console.log(_id);
@@ -49,19 +49,24 @@ export default function Mytoys() {
     })
   }
 
-
   return (
     <div>
       <div className="container my-5">
-      <div className="flex items-center space-x-2 mb-5 mt-5">
-        <label htmlFor="sort" className="text-gray-500">
-          Sort By:
-        </label>
-        <select name="sort" id="sort" className="rounded border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-20" onChange={(e)=> setSelectedOption(e.target.value)}>
-          <option value={'asen'}>Price (Low to High)</option>
-          <option value={'dese'}>Price (High to Low)</option>
-        </select>
-      </div>
+        <div className="d-flex align-items-center mb-5 mt-5">
+          <label htmlFor="sort" className=" fs-4 me-2">
+            Sort By:
+          </label>
+          <select
+            name="sort"
+            id="sort"
+            className="rounded py-2 px-2 shadow"
+            onChange={(e) => setSelectedOption(e.target.value)}
+          >
+            <option value={'asen'}>Price (Low to High)</option>
+            <option value={'dese'}>Price (High to Low)</option>
+          </select>
+        </div>
+
         <table className="table table-striped">
           <thead>
             <tr>
