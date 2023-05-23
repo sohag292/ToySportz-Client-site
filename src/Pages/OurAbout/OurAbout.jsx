@@ -7,22 +7,21 @@ import { useEffect } from 'react';
 
 export default function OurAbout() {
     useEffect(() => {
-    Aos.init({ duration: 2000 });
-  }, []);
+        Aos.init({ duration: 3000 });
+    }, []);
 
- 
     return (
         <div>
-            <div data-aos="fade-right"
-     data-aos-offset="300"
-     data-aos-easing="ease-in-sine">
+            <div
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine">
                 <div className=" py-5 bg-light">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-6">
+                            <div className="col-lg-6" data-aos="fade-right">
                                 <img src={imag1} className="w-75 d-block mx-auto rounded shadow-lg" alt="" />
                             </div>
-                            <div className="col-lg-6 d-flex flex-column justify-content-center">
+                            <div className="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-left">
                                 <h1 className="text-warning fw-bold display-5 py-4">About Us</h1>
                                 <h5 className="text-primary fw-bold ">ToySportz is a popular baby toy shop that offers </h5>
                                 <p className="">We prioritize safety and only offer toys that meet the highest quality standards. All our products are carefully curated to ensure they are free from any harmful materials and meet the necessary safety regulations.In addition to our extensive toy collection, we also provide personalized customer service. </p>

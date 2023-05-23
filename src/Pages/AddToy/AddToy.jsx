@@ -21,29 +21,29 @@ export default function AddToy() {
     const quantity = form.quantity.value;
     const description = form.description.value;
 
-    const newToy ={pictureUrl, name, sellerName, sellerEmail, subCategory, price, rating, quantity, description};
+    const newToy = { pictureUrl, name, sellerName, sellerEmail, subCategory, price, rating, quantity, description };
 
     //send data to the server
-    fetch('http://localhost:2000/addToy',{
-      method:'POST',
-      headers:{
-          'content-type':'application/json'
+    fetch('http://localhost:2000/addToy', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
       },
-      body:JSON.stringify(newToy)
+      body: JSON.stringify(newToy)
     })
-    .then(res => res.json())
-    .then(data =>{
-      console.log(data)
-      if(data.insertedId){
-        Swal.fire({
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        if (data.insertedId) {
+          Swal.fire({
             title: 'success!',
             text: 'ToySportz Added successfully',
             icon: 'success',
             confirmButtonText: 'okay'
           })
-    }
-    // form.reset()
-    })
+        }
+        form.reset()
+      })
 
   }
 
@@ -74,7 +74,7 @@ export default function AddToy() {
             </div>
             <div className="col-md-6">
               <label htmlFor="name" className="form-label">
-                Name
+               Toy Name
               </label>
               <input
                 type="text"
@@ -108,22 +108,22 @@ export default function AddToy() {
             </div>
             <div className="col-md-6">
 
-                  <label className="label">
-                    <span className="label-text">Sub Category</span>
-                  </label>
-                  <select
-                    id="inputState"
-                    name="subCategory"
-                    className="form-select p-3 rounded-lg "
-                    value={selectedToyCategory}
-                    onChange={handleChangeSelectedValue}
-                  >
-                    {bookCategories.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
+              <label className="label">
+                <span className="label-text">Sub Category</span>
+              </label>
+              <select
+                id="inputState"
+                name="subCategory"
+                className="form-select p-3 rounded-lg "
+                value={selectedToyCategory}
+                onChange={handleChangeSelectedValue}
+              >
+                {bookCategories.map((option) => (
+                  <option key={option} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
 
             </div>
             <div className="col-md-6">

@@ -28,6 +28,7 @@ export default function OurBestProduct() {
                                 <small class="text-muted">Last updated 3 mins ago</small>
                             </div>
                         </div>
+                        
                     </div>
                     <div class="col">
                         <div class="card h-100">

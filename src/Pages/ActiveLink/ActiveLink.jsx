@@ -1,12 +1,12 @@
 import React from 'react'
 import './ActiveLink.css'
 import { NavLink } from 'react-router-dom'
-export default function ActiveLink({to, children}) {
+export default function ActiveLink({ to, children }) {
   return (
     <div>
-        <NavLink to={to} className={({isActive})=> isActive ? "Active":""}>
-            {children}
-        </NavLink>
+      <NavLink to={to} className={({ isActive }) => isActive ? "Active" : ""}>
+        {children}
+      </NavLink>
     </div>
   )
 }

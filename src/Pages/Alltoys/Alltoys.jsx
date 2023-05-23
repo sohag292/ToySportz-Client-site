@@ -23,6 +23,7 @@ const AllToys = () => {
         .catch((error) => console.log(error));
     }
     setSearchText("")
+
   };
 
   const searchResults = Items.length > 0 ? Items : toysports;

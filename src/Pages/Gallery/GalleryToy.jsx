@@ -24,14 +24,14 @@ export default function GalleryToy() {
     return (
         <div className='mx-4 my-5'>
             <h1 className='text-center fw-bolder mb-5'>Toy<span className='text-success'>S</span>portz Gallery</h1>
-            <div data-aos="flip-left" className="gallery">
+            <div className="gallery">
                 <Carousel breakPoints={breakPoints}>
-                    <div className='item'><img className='w-75' src={image1} alt="" /></div>
-                    <div className='item'><img className='w-75' src={image2} alt="" /></div>
-                    <div className='item'><img className='w-75' src={image3} alt="" /></div>
-                    <div className='item'><img className='w-75' src={image4} alt="" /></div>
-                    <div className='item'><img className='w-75' src={image5} alt="" /></div>
-                    <div className='item'><img className='w-75' src={image6} alt="" /></div>
+                    <div className='item' data-aos="flip-up"><img className='w-75' src={image1} alt="" /></div>
+                    <div className='item' data-aos="flip-down"><img className='w-75' src={image2} alt="" /></div>
+                    <div className='item'data-aos="zoom-out-up"><img className='w-75' src={image3} alt="" /></div>
+                    <div className='item'data-aos="flip-left" data-aos-easing="ease-out-cubic"data-aos-duration="2000"><img className='w-75' src={image4} alt="" /></div>
+                    <div className='item' data-aos="flip-up"><img className='w-75' src={image5} alt="" /></div>
+                    <div className='item' data-aos="flip-up"><img className='w-75' src={image6} alt="" /></div>
                 </Carousel>
             </div>
         </div>
