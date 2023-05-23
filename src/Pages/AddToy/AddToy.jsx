@@ -24,7 +24,7 @@ export default function AddToy() {
     const newToy = { pictureUrl, name, sellerName, sellerEmail, subCategory, price, rating, quantity, description };
 
     //send data to the server
-    fetch('http://localhost:2000/addToy', {
+    fetch('https://toy-sportz-server-site.vercel.app/addToy', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -47,7 +47,7 @@ export default function AddToy() {
 
   }
 
-  const bookCategories = ["Basketball", "Cricket toys", "soccer toy"];
+  const bookCategories = ["Basketball", "Cricket toys", "Soccer toys"];
 
   const [selectedToyCategory, setSelectedToyCategory] = useState(
     bookCategories[0]

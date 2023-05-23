@@ -14,7 +14,7 @@ const AllToys = () => {
 
   const handleSearch = () => {
     if (searchText) {
-      fetch(`http://localhost:2000/jobSearchName/${searchText}`)
+      fetch(`https://toy-sportz-server-site.vercel.app/jobSearchName/${searchText}`)
         .then((res) => res.json())
         .then((data) => {
           setItems(data);
@@ -47,28 +47,29 @@ const AllToys = () => {
           </div>
         </div>
 
-        <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Seller</th>
-              <th scope="col">Toy Name</th>
-              <th scope="col">Sub-category</th>
-              <th scope="col">Price</th>
-              <th scope="col">Available Quantity</th>
-              <th scope="col">View Details</th>
-            </tr>
-          </thead>
-          <tbody>
-            {searchResults.map((toysport, index) => (
-              <AllToysTable
-                key={toysport._id}
-                index={index + 1}
-                toysport={toysport}
-              />
-            ))}
-          </tbody>
-        </table>
+          <table className="table ">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Seller</th>
+                <th scope="col">Toy Name</th>
+                <th scope="col">Sub-category</th>
+                <th scope="col">Price</th>
+                <th scope="col">Available Quantity</th>
+                <th scope="col">View Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              {searchResults.map((toysport, index) => (
+                <AllToysTable
+                  key={toysport._id}
+                  index={index + 1}
+                  toysport={toysport}
+                />
+              ))}
+            </tbody>
+          </table>
+ 
         {/* {limit < searchResults.length && (
           <button className="btn btn-primary" onClick={handleLoadMore}>
             Load More

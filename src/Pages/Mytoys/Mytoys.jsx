@@ -13,7 +13,7 @@ export default function Mytoys() {
   const [items, setItems] = useState([])
   const [selectedOption,setSelectedOption] = useState('asen');
   useEffect(() => {
-    fetch(`http://localhost:2000/addToy?email=${user.email}`)
+    fetch(`https://toy-sportz-server-site.vercel.app/addToy?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setItems(data))
   }, [user]);
@@ -30,7 +30,7 @@ export default function Mytoys() {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:2000/addToy/${_id}`, {
+        fetch(`https://toy-sportz-server-site.vercel.app/addToy/${_id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())
