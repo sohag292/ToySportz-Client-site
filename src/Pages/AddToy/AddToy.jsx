@@ -24,7 +24,7 @@ export default function AddToy() {
     const newToy = { pictureUrl, name, sellerName, sellerEmail, subCategory, price, rating, quantity, description };
 
     //send data to the server
-    fetch('http://localhost:2000/addToy', {
+    fetch('https://toy-sportz-server-site-sohag292.vercel.app/addToy', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

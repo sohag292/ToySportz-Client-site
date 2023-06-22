@@ -13,7 +13,7 @@ export default function Mytoys() {
   const [items, setItems] = useState([])
   const [asc,setAsc] = useState(true);
   useEffect(() => {
-    fetch(`http://localhost:2000/addToy?email=${user.email}&sort=${asc ? 'asc' : 'desc'}`)
+    fetch(`https://toy-sportz-server-site-sohag292.vercel.app/addToy?email=${user.email}&sort=${asc ? 'asc' : 'desc'}`)
       .then((res) => res.json())
       .then((data) => setItems(data));
   }, [user, asc]);
@@ -31,7 +31,7 @@ export default function Mytoys() {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:2000/addToy/${_id}`, {
+        fetch(`https://toy-sportz-server-site-sohag292.vercel.app/addToy/${_id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

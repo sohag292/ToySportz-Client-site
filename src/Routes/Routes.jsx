@@ -33,7 +33,7 @@ const router = createBrowserRouter([
       {
         path: "/alltoys",
         element: <Alltoys></Alltoys>,
-        loader:() => fetch("http://localhost:2000/addToy")
+        loader:() => fetch("https://toy-sportz-server-site-sohag292.vercel.app/addToy")
       },
       {
         path: "/mytoys",
@@ -50,17 +50,17 @@ const router = createBrowserRouter([
       {
         path: "/ToysDetails/:id",
         element: <PrivateRoute><ToysDetails></ToysDetails></PrivateRoute>,
-        loader:({params}) => fetch(`http://localhost:2000/addToy/${params.id}`)
+        loader:({params}) => fetch(`https://toy-sportz-server-site-sohag292.vercel.app/addToy/${params.id}`)
       },
       {
         path: "/mytoys/updateSports/:id",
         element: <UpdateSports></UpdateSports>,
-        loader:({params})=>fetch(`http://localhost:2000/addToy/${params.id}`)
+        loader:({params})=>fetch(`https://toy-sportz-server-site-sohag292.vercel.app/addToy/${params.id}`)
       },
       {
         path: "/TabviewDetailsallinfo/:id",
         element: <PrivateRoute><TabviewDetailsallinfo></TabviewDetailsallinfo></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:2000/addToy/${params.id}`)
+        loader:({params})=>fetch(`https://toy-sportz-server-site-sohag292.vercel.app/addToy/${params.id}`)
       }
 
     ]

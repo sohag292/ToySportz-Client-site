@@ -10,7 +10,7 @@ const AllToys = () => {
   const searchRef = useRef(null)
 
   useEffect(()=>{
-       fetch(`http://localhost:2000/jobSearchName?search=${search}`)
+       fetch(`https://toy-sportz-server-site-sohag292.vercel.app/jobSearchName?search=${search}`)
         .then((res) => res.json())
         .then((data) => {
           setItems(data);

@@ -15,7 +15,7 @@ export default function UpdateSports() {
         const newToy ={ price, quantity, description};
     
         //send data to the server
-        fetch(`http://localhost:2000/addToy/${_id}`,{
+        fetch(`https://toy-sportz-server-site-sohag292.vercel.app/addToy/${_id}`,{
           method:'PUT',
           headers:{
               'content-type':'application/json'
