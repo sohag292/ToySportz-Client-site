@@ -6,7 +6,7 @@ const ToyTabs = () => {
     const [allCategory, setAllCategory] = useState([]);
 
     useEffect(() => {
-        fetch("https://toy-sportz-server-site.vercel.app/addToy")
+        fetch("http://localhost:2000/addToy")
             .then((res) => res.json())
             .then((data) => setAllCategory(data));
     }, []);

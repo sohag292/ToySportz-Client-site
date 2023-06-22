@@ -1,28 +1,29 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLoaderData } from "react-router";
 import AllToysTable from "../AllToysTable/AllToysTable";
 
 const AllToys = () => {
   const toysports = useLoaderData();
-  const [searchText, setSearchText] = useState("");
+  const [search, setSearch] = useState('')
   const [Items, setItems] = useState([]);
-  // const [limit, setLimit] = useState(20);
+  const [limit, setLimit] = useState(20);
+  const searchRef = useRef(null)
 
-  // const handleLoadMore = () => {
-  //   setLimit(prevLimit => prevLimit + 20);
-  // };
-
-  const handleSearch = () => {
-    if (searchText) {
-      fetch(`https://toy-sportz-server-site.vercel.app/jobSearchName/${searchText}`)
+  useEffect(()=>{
+       fetch(`http://localhost:2000/jobSearchName?search=${search}`)
         .then((res) => res.json())
         .then((data) => {
           setItems(data);
-          // setLimit(20);
+          setLimit(20);
         })
-        .catch((error) => console.log(error));
-    }
-    setSearchText("")
+  },[search])
+
+  const handleLoadMore = () => {
+    setLimit(prevLimit => prevLimit + 20);
+  };
+
+  const handleSearch = () => {
+    setSearch(searchRef.current.value)
 
   };
 
@@ -33,14 +34,12 @@ const AllToys = () => {
       <div className="container my-5">
         <div className="d-flex justify-content-center">
           <div className="input-group w-25 mb-3">
-            <input
-              onChange={(e) => setSearchText(e.target.value)}
-              type="text"
+            <input ref={searchRef}
+             type="text"
               className="form-control"
-              value={searchText}
             />
             <div className="input-group-append">
-              <button className="btn btn-primary" onClick={handleSearch}>
+              <button onClick={handleSearch} className="btn btn-primary">
                 Search
               </button>
             </div>
@@ -70,11 +69,11 @@ const AllToys = () => {
             </tbody>
           </table>
  
-        {/* {limit < searchResults.length && (
+        {limit < searchResults.length && (
           <button className="btn btn-primary" onClick={handleLoadMore}>
             Load More
           </button>
-        )} */}
+        )}
       </div>
     </div>
   );

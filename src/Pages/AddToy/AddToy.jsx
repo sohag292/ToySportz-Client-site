@@ -16,7 +16,7 @@ export default function AddToy() {
     const sellerName = form.sellerName.value;
     const sellerEmail = form.sellerEmail.value;
     const subCategory = form.subCategory.value;
-    const price = form.price.value;
+    const price = parseFloat(form.price.value);
     const rating = form.rating.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
@@ -24,7 +24,7 @@ export default function AddToy() {
     const newToy = { pictureUrl, name, sellerName, sellerEmail, subCategory, price, rating, quantity, description };
 
     //send data to the server
-    fetch('https://toy-sportz-server-site.vercel.app/addToy', {
+    fetch('http://localhost:2000/addToy', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'

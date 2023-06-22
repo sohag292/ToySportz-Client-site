@@ -11,12 +11,13 @@ export default function Mytoys() {
   ToySportTitle("MyToys")
   const { user } = useContext(AuthContext)
   const [items, setItems] = useState([])
-  const [selectedOption,setSelectedOption] = useState('asen');
+  const [asc,setAsc] = useState(true);
   useEffect(() => {
-    fetch(`https://toy-sportz-server-site.vercel.app/addToy?email=${user.email}`)
+    fetch(`http://localhost:2000/addToy?email=${user.email}&sort=${asc ? 'asc' : 'desc'}`)
       .then((res) => res.json())
-      .then((data) => setItems(data))
-  }, [user]);
+      .then((data) => setItems(data));
+  }, [user, asc]);
+  
 
   const handleDelete = _id => {
     console.log(_id);
@@ -30,7 +31,7 @@ export default function Mytoys() {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://toy-sportz-server-site.vercel.app/addToy/${_id}`, {
+        fetch(`http://localhost:2000/addToy/${_id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())
@@ -52,20 +53,21 @@ export default function Mytoys() {
   return (
     <div>
       <div className="container my-5">
-        <div className="d-flex align-items-center mb-5 mt-5">
-          <label htmlFor="sort" className=" fs-4 me-2">
-            Sort By:
-          </label>
-          <select
-            name="sort"
-            id="sort"
-            className="rounded py-2 px-2 shadow"
-            onChange={(e) => setSelectedOption(e.target.value)}
-          >
-            <option value={'asen'}>Price (Low to High)</option>
-            <option value={'dese'}>Price (High to Low)</option>
-          </select>
-        </div>
+      <div className="d-flex align-items-center mb-5 mt-5">
+  <label htmlFor="sort" className=" fs-4 me-2">
+    Sort By:
+  </label>
+  <select
+    name="sort"
+    id="sort"
+    className="rounded py-2 px-2 shadow"
+    onChange={(e) => setAsc(e.target.value === 'asen')}
+  >
+    <option value={'asen'}>Price (Low to High)</option>
+    <option value={'dese'}>Price (High to Low)</option>
+  </select>
+</div>
+
 
         <table className="table table-striped">
           <thead>
